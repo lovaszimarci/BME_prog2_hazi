@@ -1,5 +1,8 @@
 #include "IP_STATISTIC.h"
 
+
+
+
 IP_STATISTIC::IP_STATISTIC(std::vector<IP_PACKET *> data): DATA(data)
 {
 }
@@ -22,4 +25,23 @@ float IP_STATISTIC::getAvarageBandwidth_ALL()
 float IP_STATISTIC::getRatio_PRIO_NON_PRIO()
 {
     return this->Ratio_PRIO_NON_PRIO;
+}
+
+
+void IP_STATISTIC::AVARAGE_BANDWITH_SENDER_RECIVER(){
+
+}
+
+void IP_STATISTIC::AVARAGE_ARIVAL_PRIORITY()
+{
+
+}
+
+void IP_STATISTIC::AVARAGE_BANDWITH_ALL()
+{
+    
+}
+
+void IP_STATISTIC::RATIO_PRIO_NON_PRIO()
+{
 }

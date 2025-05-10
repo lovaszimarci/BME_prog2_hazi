@@ -23,7 +23,14 @@ class IP_STATISTIC{
         //setterek nem kellenek mert nem lesz az osztalyon kivul allitva az ertek
 
         //statisztikai fuggvenyek
-        
+
+        void AVARAGE_BANDWITH_SENDER_RECIVER();
+        void AVARAGE_ARIVAL_PRIORITY();
+        void AVARAGE_BANDWITH_ALL();
+        void RATIO_PRIO_NON_PRIO();
+
+
+
 
 
 };
