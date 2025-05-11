@@ -8,6 +8,20 @@
 #include "IP_STATISTIC.h"
 #include <typeinfo>
 
+void Init(std::string& Filename, std::string& ip1, std::string& ip2, int& Priority_rating){
+
+    std::cout<<"  _____ _____                     _        _                          _                    "<<std::endl;
+    std::cout<<" |_   _|  __ \\                   | |      | |       /\\               | |                   "<<std::endl;
+    std::cout<<"   | | | |__) |  _ __   __ _  ___| | _____| |_     /  \\   _ __   __ _| |_   _ _______ _ __ "<<std::endl;
+    std::cout<<"   | | |  ___/  | '_ \\ / _` |/ __| |/ / _ \\ __|   / /\\ \\ | '_ \\ / _` | | | | |_  / _ \\ '__|"<<std::endl;
+    std::cout<<"  _| |_| |      | |_) | (_| | (__|   <  __/ |_   / ____ \\| | | | (_| | | |_| |/ /  __/ |   "<<std::endl;
+    std::cout<<" |_____|_|      | .__/ \\__,_|\\___|_|\\_\\___|\\__| /_/    \\_\\_| |_|\\__,_|_|\\__, /___\\___|_|   "<<std::endl;
+    std::cout<<"                | |                                                      __/ |             "<<std::endl;
+    std::cout<<"                |_|                                                     |___/              "<<std::endl;
+}
+
+
+
 
 int StringTimeToInt(const std::string& StringTime){
     int h, m, s;
@@ -76,46 +90,9 @@ void ReadIn(std::vector<IP_PACKET*>& Packets, std::string Filename){
 
 
 int main(){
-    
     std::vector<IP_PACKET*> packpack;
 
-
-    ReadIn(packpack,"test4function.txt");
-
-    IP_STATISTIC stat1(packpack);
-
-    /*
-    stat1.AVARAGE_BANDWITH_SENDER_RECIVER("102.45.187.23","87.162.34.10");
-    std::cout<<stat1.getAvarageBanwidth_SENDER_RECIVER()<<std::endl;
-    */
-
-    /*
-    stat1.AVARAGE_ARIVAL_PRIORITY(2);
-    std::cout<< stat1.getAvarageArival_PRIORITY();
-    */
-
-    /*
-    stat1.AVARAGE_BANDWITH_ALL();
-    std::cout<<stat1.getAvarageBandwidth_ALL();
-    */
-
-    stat1.RATIO_PRIO_NON_PRIO();
-    std::cout<<stat1.getRatio_PRIO_NON_PRIO();
-
-/*
-    for(IP_PACKET* item : packpack){
-        if(typeid(*item) == typeid(IP_PACKET)){
-            std::cout<< "ez sima packet" <<std::endl;
-            (*item).PrintInfo();
-        }
-        else{
-            std::cout<< "ez prio packet"<<std::endl;
-            PRIORITY_IP_PACKET* p_item = dynamic_cast<PRIORITY_IP_PACKET*>(item);
-            (*p_item).PrintInfo();
-            std::cout<<(*p_item).getPriorityRating()<<std::endl;
-        }
-    }
-*/
+    
 
 
     return 0;
