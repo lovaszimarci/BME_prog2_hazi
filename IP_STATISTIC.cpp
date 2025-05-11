@@ -95,7 +95,19 @@ void IP_STATISTIC::AVARAGE_BANDWITH_ALL()
 
 void IP_STATISTIC::RATIO_PRIO_NON_PRIO()
 {
-    
+    int sum_of_all_data = 0;
+    int sum_of_priority_data = 0;
+    for(IP_PACKET* item : DATA){
+        
+        //Priority ellenorzese
+        if(typeid(*item) == typeid(PRIORITY_IP_PACKET)){
+            sum_of_all_data = sum_of_all_data + item->getPsize();
+            sum_of_priority_data = sum_of_priority_data + item->getPsize();
+        }
+        else{
+            sum_of_all_data = sum_of_all_data + item->getPsize();
+        }
+    }
 
-
+    this->Ratio_PRIO_NON_PRIO = 100.00*((float)sum_of_priority_data/(float)sum_of_all_data);
 }

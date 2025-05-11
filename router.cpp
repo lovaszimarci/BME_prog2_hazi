@@ -80,7 +80,7 @@ int main(){
     std::vector<IP_PACKET*> packpack;
 
 
-    ReadIn(packpack,"test2function.txt");
+    ReadIn(packpack,"test4function.txt");
 
     IP_STATISTIC stat1(packpack);
 
@@ -88,8 +88,19 @@ int main(){
     stat1.AVARAGE_BANDWITH_SENDER_RECIVER("102.45.187.23","87.162.34.10");
     std::cout<<stat1.getAvarageBanwidth_SENDER_RECIVER()<<std::endl;
     */
+
+    /*
     stat1.AVARAGE_ARIVAL_PRIORITY(2);
     std::cout<< stat1.getAvarageArival_PRIORITY();
+    */
+
+    /*
+    stat1.AVARAGE_BANDWITH_ALL();
+    std::cout<<stat1.getAvarageBandwidth_ALL();
+    */
+
+    stat1.RATIO_PRIO_NON_PRIO();
+    std::cout<<stat1.getRatio_PRIO_NON_PRIO();
 
 /*
     for(IP_PACKET* item : packpack){
