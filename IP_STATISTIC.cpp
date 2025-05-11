@@ -43,8 +43,14 @@ void IP_STATISTIC::AVARAGE_BANDWITH_SENDER_RECIVER(std::string senderip, std::st
 
         }
     }
+    
     // atlag kiszamitasa
-    this->AvarageBanwidth_SENDER_RECIVER = bandwith_sum / number_of_pairs ;
+    if(number_of_pairs == 0){
+        this->AvarageBanwidth_SENDER_RECIVER = 0.0;
+    }
+    else{
+        this->AvarageBanwidth_SENDER_RECIVER = bandwith_sum / number_of_pairs ;
+    }
 }
 
 void IP_STATISTIC::AVARAGE_ARIVAL_PRIORITY(int priority_number)
@@ -64,21 +70,29 @@ void IP_STATISTIC::AVARAGE_ARIVAL_PRIORITY(int priority_number)
         
         }
     }
+    // error handling
+    if(p_packets.size()!= 0){
+        
+        int arrival_times[p_packets.size()];
+
+
+        // az erkezesi idokozok meghatarozasa
+        for(int i = 0; i < p_packets.size()-1; i++){
+            arrival_times[i] = p_packets[i+1]->getTimeOfReceiving() - p_packets[i]->getTimeOfReceiving();
+        }
+        // az atlag meghatarozasa 
+        int sum = 0;
+        for(int i = 0; i < p_packets.size()-1; i++){
+            sum = sum + arrival_times[i];
+        }
+        this->AvarageArival_PRIORITY = (float)sum/ ((float)p_packets.size()-1);
+
+    }
+    else{
+        this->AvarageArival_PRIORITY = 0.0;
+    }
+
     
-    int arrival_times[p_packets.size()];
-
-
-    // az erkezesi idokozok meghatarozasa
-    for(int i = 0; i < p_packets.size()-1; i++){
-        arrival_times[i] = p_packets[i+1]->getTimeOfReceiving() - p_packets[i]->getTimeOfReceiving();
-    }
-    // az atlag meghatarozasa 
-    int sum = 0;
-    for(int i = 0; i < p_packets.size()-1; i++){
-        sum = sum + arrival_times[i];
-    }
-    this->AvarageArival_PRIORITY = (float)sum/ ((float)p_packets.size()-1);
-
 }
 
 void IP_STATISTIC::AVARAGE_BANDWITH_ALL()

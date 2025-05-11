@@ -119,7 +119,12 @@ void ReadIn(std::vector<IP_PACKET*>& Packets, std::string Filename){
 
 
 int main(){
-    //
+    // a log file torlese az elozo hasznalat utan
+    std::ofstream File("AnalyzerLog.txt",std::ios::trunc);
+    if(!File){
+        std::cout<<"hiba a log file megnyitasakor!";
+    }
+    File.close();    
 
     std::vector<IP_PACKET*> packets;
 
@@ -193,11 +198,17 @@ int main(){
                 }
                 
                 stat1.AVARAGE_BANDWITH_SENDER_RECIVER(ip1,ip2);
-                std::cout<<"Az atlagos savszelesseg az adott forras-cel parra: "<<stat1.getAvarageBanwidth_SENDER_RECIVER()<<"Mbps"<<std::endl;
+                //error handling
+                if(stat1.getAvarageBanwidth_SENDER_RECIVER() == 0.0){
+                    std::cout<<"Nem talalhato a megadott forras-cel ip cim!"<<std::endl;
+                }
+                else{
+                    std::cout<<"Az atlagos savszelesseg az adott forras-cel parra: "<<stat1.getAvarageBanwidth_SENDER_RECIVER()<<"Mbps"<<std::endl;
+                }
                 
             }
             if(option == 2){
-                std::cout<<"Adjon meg egy prioritási erteket(1-3): ";
+                std::cout<<"Adjon meg egy prioritasi erteket(1-3): ";
                 std::cin>>priority;
                 std::cout<<std::endl;
                 while (priority < 1 || priority > 3 || std::cin.fail())
@@ -207,7 +218,15 @@ int main(){
                     std::cout<<std::endl;
                 }
                 stat1.AVARAGE_ARIVAL_PRIORITY(priority);
-                std::cout<<"Az adott prioritasu csomagok atlagos erkezesi idokoze:"<<stat1.getAvarageArival_PRIORITY()<<" masodperc"<<std::endl;
+
+                //error handling
+                if(stat1.getAvarageArival_PRIORITY() == 0.0){
+                    std::cout<<"Nem talalhato " <<priority<< " prioritasu IP csomag!"<<std::endl;
+                }
+                else{
+                    std::cout<<"Az adott prioritasu csomagok atlagos erkezesi idokoze:"<<stat1.getAvarageArival_PRIORITY()<<" masodperc"<<std::endl;
+                }
+            
             }
                 
             
