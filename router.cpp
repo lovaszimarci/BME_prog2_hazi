@@ -23,7 +23,7 @@ int StringTimeToInt(const std::string& StringTime){
 
 void WriteLogToFile(int& option_number, IP_STATISTIC& statistic){
 
-    std::ofstream File("AnalyzerLog.txt");
+    std::ofstream File("AnalyzerLog.txt",std::ios::app);
 
     if(File.is_open()){
         if(option_number == 1){
@@ -204,6 +204,7 @@ int main(){
                 }
                 else{
                     std::cout<<"Az atlagos savszelesseg az adott forras-cel parra: "<<stat1.getAvarageBanwidth_SENDER_RECIVER()<<"Mbps"<<std::endl;
+                    WriteLogToFile(option,stat1);
                 }
                 
             }
@@ -225,6 +226,7 @@ int main(){
                 }
                 else{
                     std::cout<<"Az adott prioritasu csomagok atlagos erkezesi idokoze:"<<stat1.getAvarageArival_PRIORITY()<<" masodperc"<<std::endl;
+                    WriteLogToFile(option,stat1);
                 }
             
             }
@@ -233,11 +235,15 @@ int main(){
             if(option == 3){
                 stat1.AVARAGE_BANDWITH_ALL();
                 std::cout<<"Az osszes adatbol adodo savszelesseg: "<<stat1.getAvarageBandwidth_ALL()<<"Mbps"<<std::endl;
+                    WriteLogToFile(option,stat1);
+
 
             }
             if(option == 4){
                 stat1.RATIO_PRIO_NON_PRIO();
                 std::cout<<"Az osszes adat "<<stat1.getRatio_PRIO_NON_PRIO()<<"% szazaleka a prioritasos csomagok adata"<<std::endl;
+                WriteLogToFile(option,stat1);
+
             }
             if(option == 5){
 
@@ -259,7 +265,16 @@ int main(){
                 }
                 
                 stat1.AVARAGE_BANDWITH_SENDER_RECIVER(ip1,ip2);
-                std::cout<<"Az atlagos savszelesseg az adott forras-cel parra: "<<stat1.getAvarageBanwidth_SENDER_RECIVER()<<"Mbps"<<std::endl;
+
+                //error handling
+                if(stat1.getAvarageBanwidth_SENDER_RECIVER() == 0.0){
+                    std::cout<<"Nem talalhato a megadott forras-cel ip cim!"<<std::endl;
+                }
+                else{
+                    std::cout<<"Az atlagos savszelesseg az adott forras-cel parra: "<<stat1.getAvarageBanwidth_SENDER_RECIVER()<<"Mbps"<<std::endl;
+                    WriteLogToFile(option,stat1);
+                }
+                
                 
                 // 2 fuggveny
                 std::cout<<"Adjon meg egy prioritasi erteket(1-3): ";
@@ -273,15 +288,24 @@ int main(){
                 }
 
                 stat1.AVARAGE_ARIVAL_PRIORITY(priority);
-                std::cout<<"Az adott prioritasu csomagok atlagos erkezesi idokoze:"<<stat1.getAvarageArival_PRIORITY()<<"Mbps"<<std::endl;
+
+               if(stat1.getAvarageArival_PRIORITY() == 0.0){
+                    std::cout<<"Nem talalhato " <<priority<< " prioritasu IP csomag!"<<std::endl;
+                }
+                else{
+                    std::cout<<"Az adott prioritasu csomagok atlagos erkezesi idokoze:"<<stat1.getAvarageArival_PRIORITY()<<" masodperc"<<std::endl;
+                    WriteLogToFile(option,stat1);
+                }
                 
                 // 3. fuggveny
                 stat1.AVARAGE_BANDWITH_ALL();
                 std::cout<<"Az osszes adatbol adodo savszelesseg: "<<stat1.getAvarageBandwidth_ALL()<<"Mbps"<<std::endl;
+                WriteLogToFile(option,stat1);
             
                 // 4. fuggveny
                 stat1.RATIO_PRIO_NON_PRIO();
                 std::cout<<"Az osszes adat"<<stat1.getRatio_PRIO_NON_PRIO()<<"% szazleka a prioritasos csomagok adata"<<std::endl;
+                WriteLogToFile(option,stat1);
             
             
             }
