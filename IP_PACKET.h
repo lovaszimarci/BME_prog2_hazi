@@ -32,6 +32,8 @@ public:
 
 // log
     virtual void PrintInfo();
+// routerben toltott masodpercek szama
+    virtual int GetSecondsInRouter();
 
     
 };

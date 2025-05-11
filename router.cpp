@@ -5,6 +5,7 @@
 #include <fstream>
 #include "IP_PACKET.h"
 #include "PRIORITY_IP_PACKET.h"
+#include "IP_STATISTIC.h"
 #include <typeinfo>
 
 
@@ -79,8 +80,18 @@ int main(){
     std::vector<IP_PACKET*> packpack;
 
 
-    ReadIn(packpack,"log.txt");
+    ReadIn(packpack,"test2function.txt");
 
+    IP_STATISTIC stat1(packpack);
+
+    /*
+    stat1.AVARAGE_BANDWITH_SENDER_RECIVER("102.45.187.23","87.162.34.10");
+    std::cout<<stat1.getAvarageBanwidth_SENDER_RECIVER()<<std::endl;
+    */
+    stat1.AVARAGE_ARIVAL_PRIORITY(2);
+    std::cout<< stat1.getAvarageArival_PRIORITY();
+
+/*
     for(IP_PACKET* item : packpack){
         if(typeid(*item) == typeid(IP_PACKET)){
             std::cout<< "ez sima packet" <<std::endl;
@@ -93,7 +104,7 @@ int main(){
             std::cout<<(*p_item).getPriorityRating()<<std::endl;
         }
     }
-
+*/
 
 
     return 0;

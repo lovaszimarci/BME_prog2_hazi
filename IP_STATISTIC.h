@@ -3,7 +3,7 @@
 #include <iostream>
 #include "IP_PACKET.h"
 #include "PRIORITY_IP_PACKET.h"
-
+#include <string>
 class IP_STATISTIC{
     private:
         std::vector<IP_PACKET*> DATA;
@@ -14,7 +14,7 @@ class IP_STATISTIC{
 
     public:
         //konstruktor
-        IP_STATISTIC(std::vector<IP_PACKET*> data);
+        IP_STATISTIC(std::vector<IP_PACKET*>& data);
         // getterek
         float getAvarageBanwidth_SENDER_RECIVER();
         float getAvarageArival_PRIORITY();
@@ -24,8 +24,8 @@ class IP_STATISTIC{
 
         //statisztikai fuggvenyek
 
-        void AVARAGE_BANDWITH_SENDER_RECIVER();
-        void AVARAGE_ARIVAL_PRIORITY();
+        void AVARAGE_BANDWITH_SENDER_RECIVER(std::string senderip, std::string reciverip);
+        void AVARAGE_ARIVAL_PRIORITY(int priority_number);
         void AVARAGE_BANDWITH_ALL();
         void RATIO_PRIO_NON_PRIO();
 

@@ -37,3 +37,8 @@ void IP_PACKET::PrintInfo()
 {
     std::cout<< this->SENDER_IP<<" "<< this->RECIVER_IP<<" "<<this->TIME_OF_SENDING<<" "<<this->TIME_OF_SENDING<<" "<< this->P_SIZE << std::endl;
 }
+
+
+int IP_PACKET::GetSecondsInRouter(){
+    return this->getTimeOfSending() - this->getTimeOfReceiving();
+}

@@ -16,3 +16,8 @@ int PRIORITY_IP_PACKET::getPriorityRating()
 void PRIORITY_IP_PACKET::PrintInfo(){
     std::cout<< this->getSenderIp()<<" "<< this->getReceiverIp() <<" "<< this->getTimeOfReceiving() <<" "<<this->getTimeOfSending()<<" "<< this->getPsize()<<" "<< this->getPriorityRating() << std::endl;
 }
+
+
+int PRIORITY_IP_PACKET::GetSecondsInRouter(){
+    return this->getTimeOfSending() - this->getTimeOfReceiving();
+}
