@@ -83,9 +83,19 @@ void IP_STATISTIC::AVARAGE_ARIVAL_PRIORITY(int priority_number)
 
 void IP_STATISTIC::AVARAGE_BANDWITH_ALL()
 {
+    float bandwith_sum = 0.0;
+    for(IP_PACKET* packet : DATA){
+            //az adott packet savszelessege szamitasa
+            bandwith_sum = bandwith_sum + ((float)packet->getPsize()/(float)packet->GetSecondsInRouter());
+    }
+    // atlag kiszamitasa
+    this->AvarageBandwidth_ALL = bandwith_sum / (float)DATA.size() ;
     
 }
 
 void IP_STATISTIC::RATIO_PRIO_NON_PRIO()
 {
+    
+
+
 }
