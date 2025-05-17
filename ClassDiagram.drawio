@@ -1,0 +1,49 @@
+<mxfile host="65bd71144e">
+    <diagram id="R2geUvud6QOblwmsIhMv" name="Page-1">
+        <mxGraphModel dx="831" dy="614" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="2" value="IP_PACKET" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="210" y="150" width="200" height="250" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value="SENDER_IP: string&lt;div&gt;RECIVER_IP:&amp;nbsp;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;string&lt;/div&gt;&lt;div&gt;TIME_OF_RECEIVING: int&lt;/div&gt;&lt;div&gt;TIME_OF_SENDING: int&lt;/div&gt;&lt;div&gt;P_SIZE: int&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="2" vertex="1">
+                    <mxGeometry y="26" width="200" height="84" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="2" vertex="1">
+                    <mxGeometry y="110" width="200" height="8" as="geometry"/>
+                </mxCell>
+                <mxCell id="5" value="&lt;div&gt;IP_PACKET(): void&lt;/div&gt;&lt;div&gt;~IP_PACKET(): virtual void&lt;/div&gt;getSenderIp(): string&lt;div&gt;&lt;font color=&quot;#000000&quot;&gt;getReceiverIp(): string&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font color=&quot;#000000&quot;&gt;getTimeOfSending(): int&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font color=&quot;#000000&quot;&gt;getPsize(): int&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font color=&quot;#000000&quot;&gt;PrintInfo(): virtual void&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font color=&quot;#000000&quot;&gt;GetSecondsInRouter(): virtual int&lt;/font&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="2" vertex="1">
+                    <mxGeometry y="118" width="200" height="132" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" value="PRIORITY_IP_PACKET" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="210" y="500" width="200" height="130" as="geometry"/>
+                </mxCell>
+                <mxCell id="7" value="PRIORITY_RATING: int&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="6" vertex="1">
+                    <mxGeometry y="26" width="200" height="24" as="geometry"/>
+                </mxCell>
+                <mxCell id="8" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="6" vertex="1">
+                    <mxGeometry y="50" width="200" height="8" as="geometry"/>
+                </mxCell>
+                <mxCell id="9" value="PRIORITY_IP_PACKET(): void&lt;div&gt;getPriorityRating(): int&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;Printinfo():&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;void&lt;/span&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;GetSecondsInRouter(): int&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="6" vertex="1">
+                    <mxGeometry y="58" width="200" height="72" as="geometry"/>
+                </mxCell>
+                <mxCell id="10" value="IP_STATISTIC" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="500" y="390" width="300" height="250" as="geometry"/>
+                </mxCell>
+                <mxCell id="11" value="DATA: std::vector&amp;lt;IP_PACKET*&amp;gt;&lt;div&gt;AvarageBandwith_SENDER_RECIVER: float&lt;/div&gt;&lt;div&gt;AvarageArival_PRIORITY: float&lt;/div&gt;&lt;div&gt;AvarageBandwith: float&lt;/div&gt;&lt;div&gt;Ratio_PRIO_NON_PRIO: float&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="10" vertex="1">
+                    <mxGeometry y="26" width="300" height="84" as="geometry"/>
+                </mxCell>
+                <mxCell id="12" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="10" vertex="1">
+                    <mxGeometry y="110" width="300" height="8" as="geometry"/>
+                </mxCell>
+                <mxCell id="13" value="IP_STATISTIC(): void&lt;div&gt;get&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;AvarageBandwith_SENDER_RECIVER(): float&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;getAvarageArival_PRIORITY(): float&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;&lt;div&gt;getAvarageBandwidth(): float&lt;/div&gt;&lt;div&gt;getRatio_PRIO_NON_PRIO(): float&lt;/div&gt;&lt;div&gt;AVARAGE_BANDWITH_SENDER_RECEIVER(): void&lt;/div&gt;&lt;div&gt;AVARAGE_ARIVAL_PRIORITY(): void&lt;/div&gt;&lt;div&gt;RATIO_PRIO_NON_PRIO(): void&lt;/div&gt;&lt;/span&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="10" vertex="1">
+                    <mxGeometry y="118" width="300" height="132" as="geometry"/>
+                </mxCell>
+                <mxCell id="14" value="" style="shape=singleArrow;direction=north;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="300" y="400" width="20" height="100" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

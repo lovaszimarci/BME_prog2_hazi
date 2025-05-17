@@ -64,7 +64,7 @@ void WriteLogToFile(int& option_number, IP_STATISTIC& statistic){
 
 
 
-void ReadIn(std::vector<IP_PACKET*>& Packets, std::string Filename){
+int ReadIn(std::vector<IP_PACKET*>& Packets, std::string Filename){
     // buffer az adatsornak
     std::string buffer_data_line;
     //buffer az egyes adatoknak a sorban (a stream miatt kell)
@@ -77,7 +77,8 @@ void ReadIn(std::vector<IP_PACKET*>& Packets, std::string Filename){
     std::ifstream File(Filename);
     //file error handling
     if(!File){
-        std::cout<<"hiba a file megnyitasakor";
+        std::cout<<"hiba a file megnyitasakor"<<std::endl;
+        return 0;
     }
     //while loop ami soronkent megy vegig a fajlon
     while(std::getline(File, buffer_data_line)){
@@ -113,6 +114,7 @@ void ReadIn(std::vector<IP_PACKET*>& Packets, std::string Filename){
         }
     }
     File.close();
+    return 1;
 };
 
 
@@ -154,9 +156,13 @@ int main(){
         std::cout<<std::endl;
 
         // a log file beolvasasa
-        ReadIn(packets,Filename);
+
+        while(ReadIn(packets,Filename) != 1){
+            std::cout<<"Adjon meg egy helyes fajl nevet:"<<std::endl;
+            std::cin>> Filename;
+        }
+        
         IP_STATISTIC stat1(packets);
-        stat1.AVARAGE_BANDWITH_ALL();
         
 
 
