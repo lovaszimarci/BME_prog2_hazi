@@ -20,9 +20,9 @@ float IP_STATISTIC::getAvarageArival_PRIORITY()
     return this->AvarageArival_PRIORITY;
 }
 
-float IP_STATISTIC::getAvarageBandwidth_ALL()
+float IP_STATISTIC::getBandwidth_ALL()
 {
-    return AvarageBandwidth_ALL;
+    return Bandwidth_ALL;
 }
 
 float IP_STATISTIC::getRatio_PRIO_NON_PRIO()
@@ -95,15 +95,15 @@ void IP_STATISTIC::AVARAGE_ARIVAL_PRIORITY(int priority_number)
     
 }
 
-void IP_STATISTIC::AVARAGE_BANDWITH_ALL()
+void IP_STATISTIC::BANDWITH_ALL()
 {
     float bandwith_sum = 0.0;
     for(IP_PACKET* packet : DATA){
             //az adott packet savszelessege szamitasa
             bandwith_sum = bandwith_sum + ((float)packet->getPsize()/(float)packet->GetSecondsInRouter());
     }
-    // atlag kiszamitasa
-    this->AvarageBandwidth_ALL = bandwith_sum / (float)DATA.size() ;
+
+    this->Bandwidth_ALL = bandwith_sum ;
     
 }
 
