@@ -158,15 +158,7 @@ int main(){
 
 
 
-    
-        std::cout<<"  _____ _____                     _        _                          _                    "<<std::endl;
-        std::cout<<" |_   _|  __ \\                   | |      | |       /\\               | |                   "<<std::endl;
-        std::cout<<"   | | | |__) |  _ __   __ _  ___| | _____| |_     /  \\   _ __   __ _| |_   _ _______ _ __ "<<std::endl;
-        std::cout<<"   | | |  ___/  | '_ \\ / _` |/ __| |/ / _ \\ __|   / /\\ \\ | '_ \\ / _` | | | | |_  / _ \\ '__|"<<std::endl;
-        std::cout<<"  _| |_| |      | |_) | (_| | (__|   <  __/ |_   / ____ \\| | | | (_| | | |_| |/ /  __/ |   "<<std::endl;
-        std::cout<<" |_____|_|      | .__/ \\__,_|\\___|_|\\_\\___|\\__| /_/    \\_\\_| |_|\\__,_|_|\\__, /___\\___|_|   "<<std::endl;
-        std::cout<<"                | |                                                      __/ |             "<<std::endl;
-        std::cout<<"                |_|                                                     |___/              "<<std::endl;
+        PrintLogo();
         std::cout<<"Adja meg az elemzeshez hasznalt fajl nevet."<<std::endl;
         std::cin>> Filename;
         std::cout<<std::endl;

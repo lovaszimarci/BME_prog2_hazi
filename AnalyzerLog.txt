@@ -1,0 +1,4 @@
+Az atlagos savszelesseg az adott forras-cim parra: 145.167 Mbps
+Az adott prioritasu csomagok atlagos erkezesi idokoze:32.25 masodperc
+Az osszes adatbol adodo savszelesseg: 6811.33 Mbps
+Az osszes adat 71.5817% szazaleka a prioritasos csomagok adata
