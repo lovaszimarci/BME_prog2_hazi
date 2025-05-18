@@ -13,6 +13,17 @@ void PrintLineDesign(){
     std::cout<<"-----------------------------------------------------------------------------------------------"<<std::endl;
 }
 
+void PrintLogo(){
+     std::cout<<"  _____ _____                     _        _                          _                    "<<std::endl;
+        std::cout<<" |_   _|  __ \\                   | |      | |       /\\               | |                   "<<std::endl;
+        std::cout<<"   | | | |__) |  _ __   __ _  ___| | _____| |_     /  \\   _ __   __ _| |_   _ _______ _ __ "<<std::endl;
+        std::cout<<"   | | |  ___/  | '_ \\ / _` |/ __| |/ / _ \\ __|   / /\\ \\ | '_ \\ / _` | | | | |_  / _ \\ '__|"<<std::endl;
+        std::cout<<"  _| |_| |      | |_) | (_| | (__|   <  __/ |_   / ____ \\| | | | (_| | | |_| |/ /  __/ |   "<<std::endl;
+        std::cout<<" |_____|_|      | .__/ \\__,_|\\___|_|\\_\\___|\\__| /_/    \\_\\_| |_|\\__,_|_|\\__, /___\\___|_|   "<<std::endl;
+        std::cout<<"                | |                                                      __/ |             "<<std::endl;
+        std::cout<<"                |_|                                                     |___/              "<<std::endl;
+}
+
 
 int StringTimeToInt(const std::string& StringTime){
     int h, m, s;
@@ -214,11 +225,13 @@ int main(){
                     PrintLineDesign();
                     std::cout<<"Nem talalhato a megadott forras-cel ip cim!"<<std::endl;
                     PrintLineDesign();
+                    PrintLogo();
                 }
                 else{
                     PrintLineDesign();
                     std::cout<<"Az atlagos savszelesseg az adott forras-cel parra: "<<stat1.getAvarageBanwidth_SENDER_RECIVER()<<"Mbps"<<std::endl;
                     PrintLineDesign();
+                    PrintLogo();
                     WriteLogToFile(option,stat1);
                 }
                 
@@ -240,12 +253,14 @@ int main(){
                     PrintLineDesign();
                     std::cout<<"Nem talalhato " <<priority<< " prioritasu IP csomag!"<<std::endl;
                     PrintLineDesign();
+                    PrintLogo();
                 }
                 else{
                     PrintLineDesign();
                     std::cout<<"Az adott prioritasu csomagok atlagos erkezesi idokoze:"<<stat1.getAvarageArival_PRIORITY()<<" masodperc"<<std::endl;
                     WriteLogToFile(option,stat1);
                     PrintLineDesign();
+                    PrintLogo();
                 }
             
             }
@@ -256,6 +271,7 @@ int main(){
                 PrintLineDesign();
                 std::cout<<"Az osszes adatbol adodo savszelesseg: "<<stat1.getBandwidth_ALL()<<"Mbps"<<std::endl;
                 PrintLineDesign();
+                PrintLogo();
                 
                 WriteLogToFile(option,stat1);
 
@@ -266,6 +282,7 @@ int main(){
                 PrintLineDesign();
                 std::cout<<"Az osszes adat "<<stat1.getRatio_PRIO_NON_PRIO()<<"% szazaleka a prioritasos csomagok adata"<<std::endl;
                 PrintLineDesign();
+                PrintLogo();
                 WriteLogToFile(option,stat1);
 
             }
@@ -337,7 +354,7 @@ int main(){
                 std::cout<<"Az osszes adat "<<stat1.getRatio_PRIO_NON_PRIO()<<"% szazleka a prioritasos csomagok adata"<<std::endl;
 
                 PrintLineDesign();
-
+                PrintLogo();
 
                 WriteLogToFile(option,stat1);
             

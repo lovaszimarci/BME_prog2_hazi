@@ -1,5 +1,0 @@
-Az osszes adatbol adodo savszelesseg: 900.083 Mbps
-Az atlagos savszelesseg az adott forras-cim parra: 145.167 Mbps
-Az adott prioritasu csomagok atlagos erkezesi idokoze:29 masodperc
-Az osszes adatbol adodo savszelesseg: 900.083 Mbps
-Az osszes adat 78.4467% szazaleka a prioritasos csomagok adata
